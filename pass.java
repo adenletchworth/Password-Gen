@@ -1,14 +1,18 @@
+
 import java.util.Random;
 import java.util.Scanner;
   public class pass{
     public static void main(String[] args){
     Scanner sc = new Scanner(System.in);
     System.out.println("How long is your desired password");
-    int size = sc.nextInt();
-    while(size <= 0){
-      System.out.println("Invalid Password Length: Please Input a Number Greater than 0");
-      size = sc.nextInt();
+    String input = sc.next();
+    int size = 0;
+    try{
+      size = Integer.valueOf(input);
+    }catch(NumberFormatException e){
     }
+
+
     System.out.println("Would you like include capitals? y/n");
     char c = sc.next().charAt(0);
     while(c != 'y' && c != 'n'){
